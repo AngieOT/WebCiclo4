@@ -1,0 +1,32 @@
+<div class="container">
+    <h3 class="center-align">Editar Rutas</h3>
+   
+    <form [formGroup]="fgValidacion" class="col s12" (ngSubmit)="edit()">
+      <input formControlName="id" type="hidden" class="validate">
+      <div class="row">
+        <div class="input-field col s6">
+          <select class="browser-default" formControlName="origen" >
+            <option value="" disabled>Seleccione el aeropuerto origen</option>
+            <option *ngFor="let aeropuerto of listadoAeropuertos" value="{{aeropuerto.nombre}}">{{aeropuerto.nombre}}</option>
+          </select>
+        </div>
+        <div class="input-field col s6">
+          <select class="browser-default" formControlName="destino" >
+            <option value="" disabled>Seleccione el aeropuerto destino</option>
+            <option *ngFor="let aeropuerto of listadoAeropuertos" value="{{aeropuerto.nombre}}">{{aeropuerto.nombre}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input formControlName="tiempo_estimado" type="text" class="validate">
+          <label class="active" for="tiempo_estimado">tiempo_estimado</label>
+        </div>
+      </div>  
+      <div class="row center-align">
+        <button [disabled]="!fgValidacion.valid" class="btn waves-effect waves-light" type="submit" name="action">Editar
+          <i class="material-icons right">send</i>
+        </button>
+      </div>
+    </form>
+  </div>

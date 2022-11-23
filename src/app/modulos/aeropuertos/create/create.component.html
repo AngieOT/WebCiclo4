@@ -1,0 +1,46 @@
+<div class="container">
+    <h3 class="center-align">Registrar Aeropuerto</h3>
+    <form [formGroup]="fgValidacion" class="col s12" (ngSubmit)="store()">
+      <div class="row">
+        <div class="input-field col s6">
+          <input formControlName="nombre" type="text" class="validate">
+          <label for="nombre">Nombre</label>
+        </div>
+        <div class="input-field col s6">
+          <input formControlName="ciudad" type="text" class="validate">
+          <label for="ciudad">Ciudad</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input formControlName="pais" type="text" class="validate">
+          <label for="pais">Pais</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input formControlName="coord_x" type="text" class="validate">
+          <label for="coord_x">Coord_x</label>
+        </div>
+        <div class="input-field col s6">
+          <input formControlName="coord_y" type="text" class="validate">
+          <label for="coord_y">Coord_y</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input formControlName="siglas" type="text" class="validate">
+          <label for="siglas">Siglas</label>
+        </div>
+        <div class="input-field col s6">
+          <input formControlName="tipo" type="text" class="validate">
+          <label for="tipo">Tipo</label>
+        </div>
+      </div>
+      <div class="row center-align">
+        <button [disabled]="!fgValidacion.valid" class="btn waves-effect waves-light" type="submit" name="action">Enviar
+          <i class="material-icons right">send</i>
+        </button>
+      </div>
+    </form>
+  </div>
